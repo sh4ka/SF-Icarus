@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h3 class="title round3"> News </h3>
+    <article class="round2 shadow2">
+{% for item in newsData %}
+    {% include 'news/item.html.twig' with {'item': item} %}
+{% endfor %}
+    <small>{{ 'News Last Updated on '~fileDate }}</small>
+    </article>
+{% endblock %}

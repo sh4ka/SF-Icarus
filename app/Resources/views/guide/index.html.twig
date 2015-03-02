@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h3 class="title round3"> Guide </h3>
+    <article class="round2 shadow2">
+        <table id="shows">
+{% for country in guideData %}
+    {% include 'guide/country.html.twig' with {'country': country} %}
+{% endfor %}
+    </table>
+    </article>
+{% endblock %}

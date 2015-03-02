@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h3 class="title round3"> {{ breadcrumbs|raw }} </h3>
+    <article class="round2 shadow2">
+        <ul id="qb">
+        {% for letter in 'a'..'z' %}
+            <li><a href="shows/{{ letter }}">{{ letter }}</a></li>
+        {% endfor %}
+            </ul>
+        <table id="shows">
+            <th class="show"> Shows </th>
+            <th> Country </th>
+            <th class="status"> Status </th>
+            {% for show in showData %}
+                <tr>
+                    <td class="show"> <a href="/episode/{{ show.id }}">{{ show.name }}</a></td>
+                    <td> {{ show.country }} </td>
+                    <td class="status"> {{ show.status }} </td>
+                </tr>
+                {% endfor %}
+            </table>
+    </article>
+{% endblock %}

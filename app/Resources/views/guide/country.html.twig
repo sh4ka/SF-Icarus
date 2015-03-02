@@ -1,0 +1,11 @@
+<tr>
+    <th class="country show"> {{ country.attributes.name }} Shows </th>
+    <th> Info </th>
+    <th class="name"> Titles </th>
+    <th> Episodes </th>
+    <th> Airtime </th>
+    <th> Relative </th>
+</tr>
+{% for show in country.show %}
+    {% include 'guide/show.html.twig' with {'show': show } %}
+{% endfor %}

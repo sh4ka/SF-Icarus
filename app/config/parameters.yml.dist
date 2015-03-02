@@ -1,0 +1,27 @@
+# This file is a "template" of what your parameters.yml file should look like
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            en
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    # tvrage related stuff
+    tvrage_news: http://www.tvrage.com/news/rss.php
+    tvrage_guide: http://services.tvrage.com/feeds/countdown.php
+    tvrage_shows: http://services.tvrage.com/feeds/show_list_letter.php?letter=
+    tvrage_episode: http://services.tvrage.com/feeds/full_show_info.php?sid=
+    tvrage_search: http://services.tvrage.com/feeds/search.php?show=

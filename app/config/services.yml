@@ -1,0 +1,13 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    resource_cacher:
+        class: AppBundle\Cacher\Cacher
+        arguments: ["%kernel.cache_dir%"]
+
+    breadcrumbs_generator:
+        class: AppBundle\Breadcrumbs\Breadcrumbs
+        arguments: ["@request_stack", "@router"]

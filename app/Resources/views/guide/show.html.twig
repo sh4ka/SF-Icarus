@@ -1,0 +1,9 @@
+<td class="show">
+    <a href="{$base}episode/$sid">{{ show.showname }}</a>
+</td>
+<td>
+    <a href="{{ show.showlink }}"><img src="/images/tvrage.png" alt="TVRage" /></a>
+</td>
+{% for ep in show.upcomingep %}
+    {% include 'guide/ep.html.twig' with {'ep': ep } %}
+{% endfor %}

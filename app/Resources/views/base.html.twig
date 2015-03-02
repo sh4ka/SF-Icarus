@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+    <div id="wrapper">
+        <header class="round2 shadow3">
+            <a href="{{ url('news') }}">
+                <img src="/images/tvtube.png" alt="" /> </a>
+            <h1> title </h1>
+            <h2> tagline </h2>
+            <nav>
+                {% include 'menu.html.twig' %}
+            </nav>
+        </header>
+        <div id="page" class="round shadow">
+
+        {% block body %}{% endblock %}
+
+    <footer>
+        <!--// Please do not remove this footer, thank you. //-->
+        <p> TV-Icarus Coded by TuxLyn from <a href="http://gotux.net/">GoTux.net</a>
+            &bull; Powered by <a href="http://www.tvrage.com/">TVRage.com</a> </p>
+    </footer>
+    </div> <!--#page-->
+    </div> <!--#wrapper-->
+    </body>
+</html>
