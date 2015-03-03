@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>TV-Icarus</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" href="/css/style.css" />
@@ -12,8 +12,8 @@
         <header class="round2 shadow3">
             <a href="{{ url('news') }}">
                 <img src="/images/tvtube.png" alt="" /> </a>
-            <h1> title </h1>
-            <h2> tagline </h2>
+            <h1> TV-Icarus </h1>
+            <h2> TV shows</h2>
             <nav>
                 {% include 'menu.html.twig' %}
             </nav>
@@ -29,5 +29,6 @@
     </footer>
     </div> <!--#page-->
     </div> <!--#wrapper-->
+    {% block javascripts %}{% endblock %}
     </body>
 </html>

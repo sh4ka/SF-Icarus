@@ -1,0 +1,21 @@
+<a href="{{ episode.showlink }}"><img src="{{ episode.image }}" alt="$name" id="cover" /></a>
+<div id="box">
+    <table id="info">
+        <tr> <th colspan="4">
+                <h3> <a href="{{ episode.showlink }}">{{ episode.name }}</a> </h3>
+            </th> </tr>
+        <tr> <th> Country: </th> <td> {{ episode.origin_country }} </td>
+            <th> Class: </th> <td> {{ episode.classification }} </td> </tr>
+        <tr> <th> Network: </th> <td> {{ episode.network }} </td>
+            <th> Genre: </th> <td> {{ episode.genres.genre }} </td> </tr>
+        <tr> <th> Seasons: </th> <td> {{ episode.totalseasons }} </td>
+            <th> AirTime: </th> <td> {% if episode.airtime is defined and episode.airtime != '' %}{{ episode.airtime }}{% else %}n/a{% endif %} </td> </tr>
+        <tr> <th> Runtime: </th> <td> {{ episode.runtime }} </td>
+            <th> AirDay: </th> <td> {% if episode.airday is defined and episode.airday != '' %}{{ episode.airday }}{% else %}n/a{% endif %} </td> </tr>
+        <tr> <th> Started: </th> <td> {{ episode.started }} </td>
+            <th> Timezone: </th> <td> {{ episode.timezone }} </td> </tr>
+        <tr> <th> Ended: </th> <td> {% if episode.ended is defined and episode.ended == 0 %}n/a{% else %}episode.ended{% endif %} </td>
+            <th> Status: </th> <td> {{ episode.status }} </td> </tr>
+    </table>
+</div>
+

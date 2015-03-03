@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h3 class="title round3"> <a href="{{ url('news') }}">Home</a>
+    &raquo; <a href="{{ path('shows', { 'letter': showLetter }) }}">Shows</a>
+        &raquo; {{ episodeData.name }} </h3>
+    <article class="round2 shadow2">
+        {% include 'episodes/episode.html.twig' with {'episode': episodeData} %}
+        <div id="accordion">
+        {% for season in episodeData.Episodelist.Season %}
+            {% include 'episodes/season.html.twig' with {'season': season} %}
+        {% endfor %}
+        </div>
+    </article>
+{% endblock %}
+{% block javascripts %}
+
+<script src="/js/jquery-min.js"></script>
+<script src="/js/jquery-ui-min.js"></script>
+<script src="/js/effects.js"></script>
+<script>accordion();</script>
+
+{% endblock %}

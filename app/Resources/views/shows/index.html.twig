@@ -4,7 +4,7 @@
     <article class="round2 shadow2">
         <ul id="qb">
         {% for letter in 'a'..'z' %}
-            <li><a href="shows/{{ letter }}">{{ letter }}</a></li>
+            <li><a href="{{ path('shows', { 'letter': letter }) }}">{{ letter }}</a></li>
         {% endfor %}
             </ul>
         <table id="shows">
@@ -15,7 +15,7 @@
                 <tr>
                     <td class="show"> <a href="/episode/{{ show.id }}">{{ show.name }}</a></td>
                     <td> {{ show.country }} </td>
-                    <td class="status"> {{ show.status }} </td>
+                    <td class="status"> {{ show.status|status }} </td>
                 </tr>
                 {% endfor %}
             </table>

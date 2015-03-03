@@ -102,7 +102,7 @@ nav li a { /* ul */
 	display: block;
 	min-width: 60px;
 	padding: 3px 5px 3px 5px;
-	background: url('images/btn.png');
+	background: url('/images/btn.png');
 	border-left: 1px solid #fff;
 	border-right: 1px solid #fff;
 	border-bottom: 1px solid #eee;

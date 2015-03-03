@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h3 class="title round3"> Search </h3>
+    <article class="round2 shadow2">
+        <div id="msg">
+            <p> Type your favorite show keyword in the search box and click submit. </p>
+            <p> Please note that searches done remotely and may take a few seconds. </p>
+        </div> <!--#msg-->
+        <form action="{{ url('search') }}" method="get" id="search">
+            <p> Search for your favorite show: </p>
+            <p> <input type="hidden" name="submitted" />
+                <input type="text" name="show" maxlength="50" />
+                <input type="submit" value="Search" /> </p>
+        </form>
+    {% if result %}
+        <table id="shows">
+        {% for show in result.show %}
+            <tr>
+                <td class="show"> <a href="{{ path('episodes', {'id': show.showid}) }}">{{ show.name }}</a> </td>
+                <td> <a href="{{ show.link }}"><img src="/images/tvrage.png" alt="TVRage" /></a> </td>
+                <td>{% if show.genres.genre is defined %} {{ show.genres.genre }} {% else %}n/a{% endif %} </td>
+                <td> {{ show.country }} </td>
+                <td> {{ show.seasons }} </td>
+                <td> {{ show.started }} </td>
+                <td> {{ show.ended }} </td>
+                <td class="status"> {{ show.status }}</td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

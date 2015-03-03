@@ -1,0 +1,19 @@
+<h3> &raquo; Season {{ season.attributes.no }} </h3>
+<div>
+    <table id="shows">
+        <tr>
+            <th> # </th>
+            <th class="name"> Title </th>
+            <th> Episode </th>
+            <th> AirDate </th>
+        </tr>
+        {% for episode in season.episode %}
+        <tr>
+            <td> {{ episode.epnum }} </td>
+            <td class="name"> <a href="{{ episode.link }}">{{ episode.title }}</td> </td>
+            <td> {{ season.attributes.no }}x{{ episode.seasonnum }} </td>
+            <td> {{ episode.airdate }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>

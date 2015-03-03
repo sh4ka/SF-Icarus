@@ -11,3 +11,9 @@ services:
     breadcrumbs_generator:
         class: AppBundle\Breadcrumbs\Breadcrumbs
         arguments: ["@request_stack", "@router"]
+
+    app.show_status:
+            class: AppBundle\Twig\ShowStatusExtension
+            public: false
+            tags:
+                - { name: twig.extension }
